@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Object Homework</title>
-    <link rel="stylesheet" href=" ">
-  
+        <!--Movies Title-->
+        <title>Movies</title>
 </head>
 <body>
-    <main>
-        <h1>Rate A Movie!</h1>
-        <label for="event">Movie Name</label>
-        <input type="text" name="event" id="event"><br>
-        <label for="rating">Your Rating:</label>
-        <input type="text" name="rating" id="rating"><br>
-        <input type="button" name="submit" id="submit" value="submit">
-        <p id="message">&nbsp;</p>
-    </main> 
+        <!---->
+        <!-- Text box to enter title-->
+        <p>Title: <input type="text" name="title" id='title'></p>
+        <!-- Text box to enter rating-->
+        <p>Rating: <input type="text" name="rating" id='rating'></p>
+        <!--Add button-->
+        <button onclick="add()">Add</button>
+        <!--Display button-->
+        <button onclick="display()">Display</button>
+        <!--Display Division-->
+        <div id="display"></div>
+
+        <!--Adding javascript files-->
+        <script type="text/javascript" src="movie.js"></script>
+        <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
