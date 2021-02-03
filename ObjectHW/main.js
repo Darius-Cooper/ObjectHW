@@ -1,5 +1,5 @@
 // empty array to store movies
-var movies = [];
+let movies = [];
 
 // function add to movie object to array
 function add(){
