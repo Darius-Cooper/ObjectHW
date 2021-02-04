@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-        <!--Movies Title-->
-        <title>Movies</title>
-</head>
-<body>
-        <!---->
-        <!-- Text box to enter title-->
-        <p>Title: <input type="text" name="title" id='title'></p>
-        <!-- Text box to enter rating-->
-        <p>Rating: <input type="text" name="rating" id='rating'></p>
-        <!--Add button-->
-        <button onclick="add()">Add</button>
-        <!--Display button-->
-        <button onclick="display()">Display</button>
-        <!--Display Division-->
-        <div id="display"></div>
+<html lang="en">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Movies</title>
+	<link rel="stylesheet" href="style.css">
         <!--Adding javascript files-->
-        <script type="text/javascript" src="movie.js"></script>
-        <script type="text/javascript" src="main.js"></script>
+        <script defer src="movie.js"></script>
+	<script defer src="main.js"></script>
+</head>
+
+<body>
+	<main>
+                <h1>ObjectHW - Movie Rating</h1>
+                <p id="instructions">Enter one movie title along with a rating. The rating should be an integer from 1 to 5, with 5 being a good movie and 1 a bad movie.</p>
+                <form>
+                        <!-- Text box to enter title-->
+                        <label for="titleInput">Title:</label>
+                        <input type="text" id="titleInput" name="title" placeholder="Finding Nemo" autofocus>
+                        <!-- Text box to enter rating-->
+                        <label for="ratingInput">Rating:</label>
+                        <input type="text" id="ratingInput" placeholder="5" name="rating">
+                        <br>
+                        <br>
+                        <!--Add button-->
+                        <input type="button" id="addMovieButton" value="Add Movie">
+                        <!--Display button-->
+                        <input type="button" id="showMoviesButton" value="Show Movies">
+                </form>
+                <!--Display Division-->
+                <div id="displayArea">
+                        <h4>Movie List</h4>
+                        <ul id="myUl"></ul>
+                </div>
+        </main>
+        <footer>
+                <br>
+                <hr>
+                <p>For educational purposes only.</p>
+        </footer>
 </body>
 </html>

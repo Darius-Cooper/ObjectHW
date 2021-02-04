@@ -1,28 +1,3 @@
-// empty array to store movies
-let movies = [];
-
-// function add to movie object to array
-function add(){
-        // fetching movie title from title id
-        let title = document.getElementById('title').value;
-        // fething rating
-        let rating = document.getElementById('rating').value;
-        // creating object of constructor function Movie
-        let movie = new Movie(title, rating);
-        // calling validate method of movie to add movie object to array
-        if(movie.validate()){
-                // push to array
-                movies.push(movie);
-        }
-        else{
-                // alert
-                alert("Data not Good! Movie not Added!");
-        }
-        // emptying entry boxes
-        document.getElementById('title').value="";
-        document.getElementById('rating').value="";
-}
-
 // function display to display list
 function display(){
         let htmlText = "Movies: <ul>";
@@ -34,4 +9,48 @@ function display(){
         htmlText += "</ul>";
         // adding to display div in html
         document.getElementById('display').innerHTML = htmlText;
+}
+
+
+document.getElementById('displayArea').style.display = 'none';
+
+document.getElementById('addMovieButton').addEventListener('click', addMovie);
+document.getElementById('showMoviesButton').addEventListener('click', showMovies);
+
+// empty array to store movies
+let movieArray = [];
+
+function addMovie() {
+    // creating object of constructor function MovieRating
+    let movie = new MovieRating(
+        // fetching movie title from title id
+        document.getElementById('titleInput').value,
+        // fetching rating
+        document.getElementById('ratingInput').value
+        );
+        // calling validate method of movie to add movie object to array
+        if (!movie.isValid()) {
+                // alert
+                alert('Error: Data was not good.')
+        } else {
+                 // push to array
+                movieArray.push(movie);
+        };
+        // emptying entry boxes
+        document.getElementById('titleInput').value = "";
+        document.getElementById('ratingInput').value = "";
+        document.getElementById("titleInput").select();
+}
+
+// function display to display list
+function showMovies(){
+        document.getElementById('displayArea').style.display = 'block';
+        document.getElementById('myUl').innerHTML = "";
+        // looping through each movie in list
+        for (let i in movieArray) {
+                let myLi = document.createElement('li');
+                document.getElementById('myUl').appendChild(myLi);
+                myLi.innerHTML = movieArray[i].toString();
+        };
+        document.getElementById("titleInput").select();
 }
