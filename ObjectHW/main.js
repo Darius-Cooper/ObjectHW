@@ -1,19 +1,4 @@
-// function display to display list
-function display(){
-        let htmlText = "Movies: <ul>";
-        // looping through each movie in list
-        for(let i=0;i<movies.length;i++){
-                htmlText += "<li>"+movies[i].toString()+"</li>";
-        }
-        // ending ul
-        htmlText += "</ul>";
-        // adding to display div in html
-        document.getElementById('display').innerHTML = htmlText;
-}
-
-
 document.getElementById('displayArea').style.display = 'none';
-
 document.getElementById('addMovieButton').addEventListener('click', addMovie);
 document.getElementById('showMoviesButton').addEventListener('click', showMovies);
 
@@ -21,8 +6,8 @@ document.getElementById('showMoviesButton').addEventListener('click', showMovies
 let movieArray = [];
 
 function addMovie() {
-    // creating object of constructor function MovieRating
-    let movie = new MovieRating(
+    // creating object of constructor function Movie
+    let movie = new Movie(
         // fetching movie title from title id
         document.getElementById('titleInput').value,
         // fetching rating
@@ -42,7 +27,7 @@ function addMovie() {
         document.getElementById("titleInput").select();
 }
 
-// function display to display list
+// function to display list
 function showMovies(){
         document.getElementById('displayArea').style.display = 'block';
         document.getElementById('myUl').innerHTML = "";
@@ -51,6 +36,6 @@ function showMovies(){
                 let myLi = document.createElement('li');
                 document.getElementById('myUl').appendChild(myLi);
                 myLi.innerHTML = movieArray[i].toString();
-        };
+        }
         document.getElementById("titleInput").select();
 }
